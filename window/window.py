@@ -2,6 +2,7 @@
 # coding=utf-8
 import wx
 from window.about_dialog import AbountDialog
+from window.motion_blur_dialog import MotionBlurDialog
 from function import Function
 import os
 
@@ -29,6 +30,8 @@ class MainWindow(wx.Frame):
     def __init_events(self):
         self.Bind(wx.EVT_MENU, self.__on_btn_about_click, self.btn_about)
         self.Bind(wx.EVT_MENU, self.__on_btn_open_click, self.btn_open)
+        self.Bind(wx.EVT_MENU, self.__on_btn_motion_blur_click,
+                  self.btn_motion_blur)
 
     def __get_size(self, bmp):
         width = bmp.GetWidth()
@@ -40,6 +43,18 @@ class MainWindow(wx.Frame):
         width = factor*width
         height = factor*height
         return width, height
+
+    def refresh_image(self):
+        array = self.function.current_image
+        shape = array.shape
+        image = wx.Image(width=shape[1], height=shape[0])
+        image.SetData(array.tostring())
+        bitmap = image.ConvertToBitmap()
+        size = self.__get_size(bitmap)
+        bitmap = image.Scale(
+            size[0], size[1], wx.IMAGE_QUALITY_BICUBIC).ConvertToBitmap()
+        self.static_bmp.SetSize(size)
+        self.static_bmp.SetBitmap(bitmap)
 
     def __on_btn_open_click(self, event):
         dialog = wx.FileDialog(self, message="打开文件", defaultDir=os.getcwd())
@@ -67,7 +82,15 @@ class MainWindow(wx.Frame):
         dialog = AbountDialog(self)
         dialog.Show()
 
+    def __on_btn_motion_blur_click(self, event):
+        def generic_callback():
+            self.refresh_image()
+        dialog = MotionBlurDialog(self, self.function, generic_callback,
+                                  generic_callback, generic_callback)
+        dialog.Show()
+
     def __init_widgets(self):
+
         panel = wx.Panel(self)
         panel.SetBackgroundColour("#F0F0F0")
 
