@@ -1,0 +1,72 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AbountDialog	../window\about_dialog.py	/^class AbountDialog(wx.Dialog):$/;"	kind:class	line:4
+AbountDialog	../window\window.py	/^from window.about_dialog import AbountDialog$/;"	kind:namespace	line:4
+Function	../function.py	/^class Function:$/;"	kind:class	line:11
+Function	../main.py	/^from function import Function$/;"	kind:namespace	line:3
+Function	../window\window.py	/^from function import Function$/;"	kind:namespace	line:6
+MainWindow	../main.py	/^from window.window import MainWindow$/;"	kind:namespace	line:1
+MainWindow	../window\window.py	/^class MainWindow(wx.Frame):$/;"	kind:class	line:10
+MotionBlurDialog	../window\motion_blur_dialog.py	/^class MotionBlurDialog(wx.Dialog):$/;"	kind:class	line:5
+MotionBlurDialog	../window\window.py	/^from window.motion_blur_dialog import MotionBlurDialog$/;"	kind:namespace	line:5
+__get_size	../window\window.py	/^    def __get_size(self, bmp):$/;"	kind:member	line:46
+__init__	../function.py	/^    def __init__(self):$/;"	kind:member	line:12
+__init__	../window\about_dialog.py	/^    def __init__(self, parent):$/;"	kind:member	line:5
+__init__	../window\motion_blur_dialog.py	/^    def __init__(self, parent, function, preview_callback, confirm_callback, cancel_callback):$/;"	kind:member	line:6
+__init__	../window\window.py	/^    def __init__(self, function: Function):$/;"	kind:member	line:11
+__init_events	../window\motion_blur_dialog.py	/^    def __init_events(self):$/;"	kind:member	line:23
+__init_events	../window\window.py	/^    def __init_events(self):$/;"	kind:member	line:30
+__init_widgets	../window\about_dialog.py	/^    def __init_widgets(self):$/;"	kind:member	line:10
+__init_widgets	../window\motion_blur_dialog.py	/^    def __init_widgets(self):$/;"	kind:member	line:68
+__init_widgets	../window\window.py	/^    def __init_widgets(self):$/;"	kind:member	line:102
+__on_btn_about_click	../window\window.py	/^    def __on_btn_about_click(self, event):$/;"	kind:member	line:91
+__on_btn_cancel_click	../window\motion_blur_dialog.py	/^    def __on_btn_cancel_click(self, event):$/;"	kind:member	line:63
+__on_btn_confirm_click	../window\motion_blur_dialog.py	/^    def __on_btn_confirm_click(self, event):$/;"	kind:member	line:58
+__on_btn_motion_blur_click	../window\window.py	/^    def __on_btn_motion_blur_click(self, event):$/;"	kind:member	line:95
+__on_btn_open_click	../window\window.py	/^    def __on_btn_open_click(self, event):$/;"	kind:member	line:69
+__on_btn_preview_click	../window\motion_blur_dialog.py	/^    def __on_btn_preview_click(self, event):$/;"	kind:member	line:52
+__on_btn_redo_click	../window\window.py	/^    def __on_btn_redo_click(self,event):$/;"	kind:member	line:38
+__on_btn_undo_click	../window\window.py	/^    def __on_btn_undo_click(self, event):$/;"	kind:member	line:42
+__on_slider_direction_changed	../window\motion_blur_dialog.py	/^    def __on_slider_direction_changed(self, event):$/;"	kind:member	line:44
+__on_slider_length_changed	../window\motion_blur_dialog.py	/^    def __on_slider_length_changed(self, event):$/;"	kind:member	line:40
+__on_text_ctrl_direction_changed	../window\motion_blur_dialog.py	/^    def __on_text_ctrl_direction_changed(self, event):$/;"	kind:member	line:48
+__on_text_ctrl_length_changed	../window\motion_blur_dialog.py	/^    def __on_text_ctrl_length_changed(self, event):$/;"	kind:member	line:36
+about_dialog.py	../window\about_dialog.py	1;"	kind:file	line:1
+app	../main.py	/^    app = wx.App()$/;"	kind:variable	line:6
+checkpoint	../function.py	/^    def checkpoint(self):$/;"	kind:member	line:46
+cv2	../function.py	/^import cv2$/;"	kind:namespace	line:8
+function.py	../function.py	1;"	kind:file	line:1
+generic_callback	../window\window.py	/^        def generic_callback():$/;"	kind:function	line:96
+main.py	../main.py	1;"	kind:file	line:1
+matlib	../function.py	/^import numpy.matlib$/;"	kind:namespace	line:4
+matplotlib	../function.py	/^import matplotlib.image as mpimg$/;"	kind:namespace	line:7
+matplotlib	../function.py	/^import matplotlib.pylab as plt$/;"	kind:namespace	line:6
+motion_blur	../function.py	/^    def motion_blur(self, length, theta):$/;"	kind:member	line:94
+motion_blur_dialog.py	../window\motion_blur_dialog.py	1;"	kind:file	line:1
+mpimg	../function.py	/^import matplotlib.image as mpimg$/;"	kind:namespace	line:7
+np	../function.py	/^import numpy as np$/;"	kind:namespace	line:3
+np	../window\motion_blur_dialog.py	/^import numpy as np$/;"	kind:namespace	line:2
+numpy	../function.py	/^import numpy.matlib$/;"	kind:namespace	line:4
+open	../function.py	/^    def open(self, file_path):$/;"	kind:member	line:19
+os	../window\window.py	/^import os$/;"	kind:namespace	line:7
+plt	../function.py	/^import matplotlib.pylab as plt$/;"	kind:namespace	line:6
+program.py	../program.py	1;"	kind:file	line:1
+radial_blur	../function.py	/^    def radial_blur(self):$/;"	kind:member	line:50
+redo	../function.py	/^    def redo(self):$/;"	kind:member	line:34
+refresh_image	../window\window.py	/^    def refresh_image(self):$/;"	kind:member	line:57
+rollback	../function.py	/^    def rollback(self):$/;"	kind:member	line:43
+test_main_window	../window\window.py	/^def test_main_window():$/;"	kind:function	line:169
+test_motion_blur	../function.py	/^def test_motion_blur(func):$/;"	kind:function	line:125
+test_radial_blur	../function.py	/^def test_radial_blur(func):$/;"	kind:function	line:119
+time	../function.py	/^import time$/;"	kind:namespace	line:5
+undo	../function.py	/^    def undo(self):$/;"	kind:member	line:25
+win	../main.py	/^    win = MainWindow(Function())$/;"	kind:variable	line:7
+window.py	../window\window.py	1;"	kind:file	line:1
+wx	../main.py	/^import wx$/;"	kind:namespace	line:2
+wx	../window\about_dialog.py	/^import wx$/;"	kind:namespace	line:1
+wx	../window\motion_blur_dialog.py	/^import wx$/;"	kind:namespace	line:1
+wx	../window\window.py	/^import wx$/;"	kind:namespace	line:3
