@@ -2,9 +2,9 @@ import wx
 import numpy as np
 
 
-class MotionBlurDialog(wx.Dialog):
+class SurfaceBlurDialog(wx.Dialog):
     def __init__(self, parent, function, preview_callback, confirm_callback, cancel_callback):
-        wx.Dialog.__init__(self, parent, -1, "运动模糊", style=wx.CAPTION |
+        wx.Dialog.__init__(self, parent, -1, "导向滤波", style=wx.CAPTION |
                            wx.STAY_ON_TOP | wx.CLOSE_BOX)
         self.function = function
         self.preview_callback = preview_callback
@@ -47,18 +47,18 @@ class MotionBlurDialog(wx.Dialog):
 
     def __on_text_ctrl_direction_changed(self, event):
         label = self.text_ctrl_direction.GetLineText(0)
-        self.slider_direction.SetValue(int(label))
+        self.slider_direction.SetValue(float(label))
 
     def __on_btn_preview_click(self, event):
         length = self.text_ctrl_length.GetLineText(0)
         theta = self.text_ctrl_direction.GetLineText(0)
-        self.function.motion_blur(int(length), float(theta))
+        self.function.guided_filter(int(length), float(theta))
         self.preview_callback()
 
     def __on_btn_confirm_click(self, event):
         length = self.text_ctrl_length.GetLineText(0)
         theta = self.text_ctrl_direction.GetLineText(0)
-        self.function.motion_blur(int(length), float(theta))
+        self.function.guided_filter(int(length), float(theta))
         self.function.checkpoint()
         self.confirm_callback()
         self.Close()
@@ -71,8 +71,8 @@ class MotionBlurDialog(wx.Dialog):
     def __init_widgets(self):
         panel = wx.Panel(self)
         layout = wx.BoxSizer(wx.VERTICAL)
-        stext_length = wx.StaticText(panel, -1, "强度")
-        stext_direction = wx.StaticText(panel, -1, "角度")
+        stext_length = wx.StaticText(panel, -1, "半径")
+        stext_direction = wx.StaticText(panel, -1, "正则项")
         length_layout = wx.BoxSizer(wx.HORIZONTAL)
         self.slider_length = wx.Slider(
             panel, -1, minValue=0, maxValue=100)
@@ -85,7 +85,7 @@ class MotionBlurDialog(wx.Dialog):
 
         direction_layout = wx.BoxSizer(wx.HORIZONTAL)
         self.slider_direction = wx.Slider(
-            panel, -1, minValue=0, maxValue=99)
+            panel, -1, minValue=0, maxValue=300)
         self.text_ctrl_direction = wx.TextCtrl(
             panel, -1, size=(40, 10), style=wx.TE_PROCESS_ENTER)
         self.text_ctrl_direction.SetLabelText(str(0))
