@@ -1,0 +1,5 @@
+wxPython
+numpy
+matplotlib
+scipy
+opencv-python

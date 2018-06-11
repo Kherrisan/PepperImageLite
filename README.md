@@ -20,4 +20,7 @@
     2.4 撤销
     2.5 重做
 
-hel
+## 环境依赖说明
+
+1. Python3.6及以上版本
+2. pip -r requirements.txt安装依赖库

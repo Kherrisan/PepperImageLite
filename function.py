@@ -208,6 +208,7 @@ class Function:
         """
         导向滤波
         """
+        img_out = self.base_image.copy()
 
         def average(i):
             return ndimage.uniform_filter(i, size=r)

@@ -19,7 +19,7 @@ from window.wave_dialog import WaveDialog
 
 class MainWindow(wx.Frame):
     def __init__(self, function: Function):
-        wx.Frame.__init__(self, None, title="Doudou PS Lite", pos=wx.DefaultPosition, size=wx.Size(
+        wx.Frame.__init__(self, None, title="PepperImageLite", pos=wx.DefaultPosition, size=wx.Size(
             600, 600), style=wx.SYSTEM_MENU | wx.CAPTION | wx.CLOSE_BOX)
         self.IMAGE_WIDTH = 560
         self.IMAGE_HEIGHT = 560
@@ -60,6 +60,8 @@ class MainWindow(wx.Frame):
                   self.btn_blur_glass)
         self.Bind(wx.EVT_MENU, self.__on_btn_undo_click, self.btn_undo)
         self.Bind(wx.EVT_MENU, self.__on_btn_redo_click, self.btn_redo)
+        self.Bind(wx.EVT_MENU, self.__on_btn_save_as_click, self.btn_save_as)
+        self.Bind(wx.EVT_MENU, self.__on_btn_save_click, self.btn_save)
 
     def __on_btn_save_click(self, evt):
         try:
@@ -68,7 +70,7 @@ class MainWindow(wx.Frame):
             traceback.print_exc()
 
     def __on_btn_save_as_click(self, evt):
-        dialog = wx.FileDialog(self, message="保存图片", defaultDir=os.getcwd())
+        dialog = wx.FileDialog(self, message="图片另存为", defaultDir=os.getcwd())
         if wx.OK == dialog.ShowModal():
             try:
                 self.function.save(dialog.GetPath())
